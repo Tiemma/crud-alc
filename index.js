@@ -8,7 +8,7 @@ const cookieParser = require('cookie-parser');
 const bodyParser   = require('body-parser');
 const session      = require('express-session');
 const app 	   = express()
-
+const PORT = process.env.PORT || 3000
 
 import schema from "./schema"
 import path from "path"
@@ -38,7 +38,7 @@ schema: schema,
 graphiql: true
 }))
 
-app.listen(4000)
+app.listen(PORT)
 
-console.log("Server started ")
+console.log("Server started on PORT" + PORT)
 
