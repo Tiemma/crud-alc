@@ -20,7 +20,8 @@
     "graphql": "^0.11.7",
     "graphql-projection": "^0.1.2",
     "graphql-tools": "^2.7.2",
-    "mongoose": "^4.13.0"
+    "mongoose": "^4.13.0",
+    "passport": "^0.4.0"
   },
   "devDependencies": {
     "babel-preset-env": "^1.6.1",
