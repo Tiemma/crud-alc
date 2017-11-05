@@ -4,13 +4,18 @@ import DepartmentSchema from "./schema/department"
 import CoursesSchema from "./schema/courses"
 import AdminSchema from "./schema/admin"
 
+
+
+module.exports = function(){
 // DB instance  definition
+
 const db = Mongoose.createConnection('mongodb://localhost:27017/crud');
 
+console.log("DB Connected")
 
 //Model definitions
 var student = db.model('Student', StudentSchema)
-var admin = db.model('Admin', AdminSchema)
+var admin = db.model('Admin', AdminSchema())
 var courses = db.model('Course', CoursesSchema)
 var dept = db.model('Department', DepartmentSchema)
 
@@ -85,6 +90,7 @@ static create(adminData){
                 if(err) return console.log(err)
                 console.log("Admin Created successfully, ID: " + adminData.id)
         })
+	return inst
 }
 
 static find(id, projections){
@@ -239,10 +245,5 @@ static update(data){
 }
 
 
-export default {
-		db,
-		Students,
-		Admins,
-		Courses,
-		Departments
-		}
+return {db, Admins, Students, admin, student, courses, dept, Courses, Departments}
+}

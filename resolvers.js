@@ -1,5 +1,5 @@
 import {find,filter} from "lodash"
-import db from "./db"
+var db = require('./db')()
 
 export function getProjection (fieldASTs) {
   return fieldASTs.fieldNodes[0].selectionSet.selections.reduce((projections, selection) => {

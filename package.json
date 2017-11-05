@@ -4,7 +4,7 @@
   "description": "This is a basic school information system",
   "main": "index.js",
   "scripts": {
-    "build": "babel -w *.js -d lib | babel -w schema -d lib/schema",
+    "build": "babel -w *.js -d lib | babel -w schema -d lib/schema | babel -w auth -d lib/auth",
     "start": "nodemon lib/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },

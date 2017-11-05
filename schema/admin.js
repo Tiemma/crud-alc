@@ -1,7 +1,7 @@
-var mongoose = require("mongoose")
 var bcrypt = require("bcrypt-nodejs")
-var Schema = mongoose.Schema
+var Schema = require('mongoose').Schema
 
+module.exports = function(){
 var adminSchema = new Schema({
 	id: {
 		type: Schema.Types.ObjectId,
@@ -32,7 +32,9 @@ adminSchema.methods.generateHash = function(password) {
 
 // checking if password is valid
 adminSchema.methods.validPassword = function(password) {
-    return bcrypt.compareSync(password, this.local.password);
+    return bcrypt.compareSync(password, this.password);
 };
 
-export default adminSchema
+
+return adminSchema
+}
