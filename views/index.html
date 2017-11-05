@@ -1,0 +1,45 @@
+<div id="content"></div>
+
+<script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<script defer type="text/javascript">
+
+setTimeout(function(){
+read = `
+	query{
+		student{
+		firstName
+		}
+	}
+`
+
+id = "140403002"
+firstName = "Bakare"
+lastName = "Emmanuel"
+dept = "59fe251c087d4120c6b14f12"
+gender = false
+email = "blank@gmail.com"
+phone = "07080453821"
+
+createMutation = `id: ${id}, firstName: "${firstName}", lastName: "${lastName}", dept_id: "${dept}", gender: ${gender}, email: "${email}", phone_no: "${phone}"`
+
+create = `
+	mutation{
+		createStudent(${createMutation}){
+		firstName
+		}
+	}
+`
+$.ajaxSetup({
+    headers: {
+        'Content-Type':'application/graphql'
+    }
+});
+
+$.post('./graphql', create, function(res){
+	
+	$('div#content').text(JSON.stringify(res))
+})
+}, 4000)
+
+</script>

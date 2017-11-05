@@ -1,0 +1,34 @@
+{
+  "name": "crud-alc",
+  "version": "1.0.0",
+  "description": "This is a basic school information system",
+  "main": "index.js",
+  "scripts": {
+    "build": "babel -w *.js -d lib | babel -w schema -d lib/schema",
+    "start": "nodemon lib/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Bakare Emmanuel",
+  "license": "ISC",
+  "dependencies": {
+    "apollo-server-express": "^1.2.0",
+    "babel": "^5.8.23",
+    "babel-cli": "^6.26.0",
+    "bcrypt-nodejs": "0.0.3",
+    "express": "^4.13.3",
+    "express-graphql": "^0.6.11",
+    "graphql": "^0.11.7",
+    "graphql-projection": "^0.1.2",
+    "graphql-tools": "^2.7.2",
+    "mongoose": "^4.13.0"
+  },
+  "devDependencies": {
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-es2015": "^6.24.1"
+  },
+  "babel": {
+    "presets": [
+      "es2015"
+    ]
+  }
+}
