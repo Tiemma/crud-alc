@@ -24,7 +24,7 @@ app.set("views",  "./view")
 app.set('view engine', 'ejs'); // set up ejs for templating
 
 app.get('/', function(req, res){
-      return res.sendfile('./view/index.html')
+      return res.sendfile('./public/view/index.html')
 
 });
 

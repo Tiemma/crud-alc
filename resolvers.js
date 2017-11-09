@@ -12,7 +12,7 @@ export function getProjection (fieldASTs) {
 const resolvers = {
   Mutation: {
    createStudent: (_, data = {id, firstName, lastName, dept_id, gender, email, phone_no, cgpa, address, age, level, courses,  address}) => {
-    	return db.Students.create(data)
+    	 return db.Students.create(data))
     },
    deleteStudent: (_, {id}) => {
         console.log("Delete student started")
