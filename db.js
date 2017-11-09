@@ -9,7 +9,7 @@ import AdminSchema from "./schema/admin"
 module.exports = function(){
 // DB instance  definition
 
-const db = Mongoose.createConnection('mongodb://crud:crud@ds249575.mlab.com:49575/crud');
+const db = Mongoose.createConnection('mongodb://localhost:27017/crud');
 
 console.log("DB Connected")
 
@@ -17,7 +17,7 @@ console.log("DB Connected")
 var student = db.model('Student', StudentSchema)
 var admin = db.model('Admin', AdminSchema())
 var courses = db.model('Course', CoursesSchema)
-var dept = db.model('Department', DepartmentSchema)
+var department = db.model('Department', DepartmentSchema())
 
 var studentData = []
 
@@ -193,7 +193,7 @@ static update(data){
 class Departments{
 
 static create(deptData){
-        const inst = new dept(deptData)
+        const inst = new department(deptData)
 
         inst.save(function(err){
                 if(err) return console.log(err)
@@ -206,7 +206,7 @@ static find(id, projections){
 
 	var dataCallBack = new Promise((resolve, reject) => {
 	if(id)
-        	dept.find({"id":id}, projections, (err, person)=>{
+        	department.find({"id":id}, projections, (err, person)=>{
 			if (err){
 				reject(err)
 			}else{
@@ -214,7 +214,7 @@ static find(id, projections){
 			}
 		})
 	else
-		dept.find({available: true}, projections, (err, persons)=> {
+		department.find({available: true}, projections, (err, persons)=> {
           	if (err) {
 			reject(err);
          	 } else {
@@ -227,14 +227,14 @@ static find(id, projections){
 }
 
 static remove(id){
-	dept.remove({"id": id}, function(err){
+	department.remove({"id": id}, function(err){
 		if(err) console.log("An error occurred")
 		console.log("Course with ID: " + id + " has been removed")
 	})
 }
 
 static update(data){
-	dept.update({id: data.id}, { $set: data}, function(err, raw){
+	department.update({id: data.id}, { $set: data}, function(err, raw){
 		if(err) return console.log("An error occured" + err)
 		console.log("Update successful: " + JSON.stringify(raw))
 	})
@@ -245,5 +245,5 @@ static update(data){
 }
 
 
-return {db, Admins, Students, admin, student, courses, dept, Courses, Departments}
+return {db, Admins, Students, admin, student, courses, department, Courses, Departments}
 }

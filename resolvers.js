@@ -10,26 +10,8 @@ export function getProjection (fieldASTs) {
 
 
 const resolvers = {
-  Query:{
-    student: (root, {}, source, fieldASTs)  => {
-	var student = []
-	db.Students.find(null, getProjection(fieldASTs)).then(function(err, person){
-		console.log(person)
-		student.push(person)
-	})
-  	return student
-  },
-    student: (root, { id }, source, fieldASTs)  => {
-	var student = []
-	db.Students.find(id, getProjection(fieldASTs)).then(function(err,person){
-		console.log(person)
-		student.push(person)
-	})
-	return student
-  }
-  },
   Mutation: {
-   createStudent: (_, data = {id, firstName, lastName, dept_id, gender, email, phone, cgpa, address, age, level, courses,  address}) => {
+   createStudent: (_, data = {id, firstName, lastName, dept_id, gender, email, phone_no, cgpa, address, age, level, courses,  address}) => {
     	return db.Students.create(data)
     },
    deleteStudent: (_, {id}) => {

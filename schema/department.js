@@ -1,6 +1,8 @@
 var mongoose = require("mongoose")
 var Schema = mongoose.Schema
 
+module.exports = function(){
+
 var departmentSchema = new Schema({
 	id: {
 		type: Schema.Types.ObjectId,
@@ -18,5 +20,5 @@ var departmentSchema = new Schema({
 	}
 })
 
-
-export default departmentSchema
+return departmentSchema
+}

@@ -5,19 +5,19 @@ import resolvers from "./resolvers"
 const typeDefs = `
 
 	type Student{
-		id: Int!,
+		id: String!,
 		firstName: String!,
 		lastName: String!,
-		dept_id: Department!,
+		dept_id: Department,
 		cgpa: Float,
 		address: String,
-		gender: Boolean!,
+		gender: String!,
 		email: String!,
 		age: Int,
 		level: Int,
-		phone: String!,
+		phone_no: String!,
 		courses: [Courses],
-		password: String!
+		password: String
 	}
 
 	type Department{
@@ -48,9 +48,9 @@ const typeDefs = `
 	}
 
 	type Mutation{
-		createStudent(id: Int!, firstName: String!, lastName: String!, dept_id: ID!, gender: Boolean!, email: String!, phone_no: String!, password: String!): Student
-                deleteStudent(id: Int!): Student
-		updateStudent(id: Int!, firstName: String, lastName: String, dept_id: ID, gender: Boolean, email: String, phone_no: String, password: String, cgpa: Float, address: String, age: Int, level: Int, courses: [ID]): Student
+		createStudent(id: String!, firstName: String!, lastName: String!, dept_id: ID!, gender: String!, email: String!, phone_no: String!, password: String): Student
+                deleteStudent(id: String!): Student
+		updateStudent(id: String!, firstName: String, lastName: String, dept_id: ID, gender: Boolean, email: String, phone_no: String, password: String, cgpa: Float, address: String, age: Int, level: Int, courses: [ID]): Student
 		createAdmin(id: ID!, firstName: String!, lastName: String!, email: String!, password: String!): Admin
 		deleteAdmin(id:Int!): Admin
 		updateAdmin(id:Int!, firstName: String, lastName: String, email: String, password: String): Admin

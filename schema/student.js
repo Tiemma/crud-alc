@@ -43,7 +43,7 @@ var studentSchema = new Schema({
 
 	level: Number,
 
-	phone: {
+	phone_no: {
 		type:Number,
 		unique:true
 	},
