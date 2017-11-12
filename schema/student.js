@@ -2,68 +2,72 @@ var mongoose = require("mongoose")
 var bcrypt = require("bcrypt-nodejs")
 var Schema = mongoose.Schema
 
-var studentSchema = new Schema({
 
-	id: {
-		type:String,
-		unique:true,
-		required: true
-	},
+module.exports = function(){
+	var studentSchema = new Schema({
 
-	firstName: {
-		type: String,
-		required: true
-	},
+		id: {
+			type:String,
+			unique:true,
+			required: true
+		},
 
-	lastName: {
-		type: String,
-		required: true
-	},
+		firstName: {
+			type: String,
+			required: true
+		},
 
-	dept_id: {
-		type: Schema.Types.ObjectId,
-		required: true
-	},
+		lastName: {
+			type: String,
+			required: true
+		},
 
-	cgpa: Number,
+		dept_id: {
+			type: Schema.Types.ObjectId,
+			required: true
+		},
 
-	address: String,
+		cgpa: String,
 
-	gender: {
-		type: String,
-		required: true
-	},
+		address: String,
 
-	email: {
-		type:String,
-		unique:true
-	},
+		gender: {
+			type: String,
+			required: true
+		},
 
-	age: Number,
+		email: {
+			type:String,
+			unique:true
+		},
 
-	level: Number,
+		age: String,
 
-	phone_no: {
-		type:Number,
-		unique:true
-	},
+		level: String,
 
-	courses: [{
-		type: Schema.Types.ObjectId,
-		ref: 'Courses'
-	}],
+		phone_no: {
+			type:String,
+			unique:true
+		},
 
-	password: String
-})
+		courses: [{
+			type: Schema.Types.ObjectId,
+			ref: 'Courses'
+		}],
 
-studentSchema.methods.generateHash = function(password) {
-    return bcrypt.hashSync(password, bcrypt.genSaltSync(8), null);
-};
+		password: String
+	})
 
-// checking if password is valid
-studentSchema.methods.validPassword = function(password) {
-    return bcrypt.compareSync(password, this.local.password);
-};
+	studentSchema.methods.generateHash = function(password) {
+	    return bcrypt.hashSync(password, bcrypt.genSaltSync(8), null);
+	};
 
-export default studentSchema
+	// checking if password is valid
+	studentSchema.methods.validPassword = function(password) {
+	    return bcrypt.compareSync(password, this.local.password);
+	};
+
+	return studentSchema
+}
+ 
 

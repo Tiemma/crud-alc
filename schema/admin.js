@@ -26,15 +26,14 @@ var adminSchema = new Schema({
 })
 
 
-adminSchema.methods.generateHash = function(password) {
-    return bcrypt.hashSync(password, bcrypt.genSaltSync(8), null);
-};
-
 // checking if password is valid
 adminSchema.methods.validPassword = function(password) {
     return bcrypt.compareSync(password, this.password);
 };
 
+adminSchema.methods.generateHash = function(password) {
+    return bcrypt.hashSync(password, bcrypt.genSaltSync(8), null);
+};
 
 return adminSchema
 }

@@ -2,6 +2,9 @@ var mongoose = require("mongoose")
 
 var Schema = mongoose.Schema
 
+
+module.exports = function(){
+
 var courseSchema = new Schema({
 	id: {
 		type: Schema.Types.ObjectId, 
@@ -14,24 +17,23 @@ var courseSchema = new Schema({
 	},
 
 	unit: {
-		type: Number, 
+		type: String, 
 		required: true, 
-		min: 0, 
-		max: 12
 	},
 
 	year: {
-		type: Date, 
+		type: String, 
 		required: true
 	},
 
 	department: [{
-		type: Schema.Types.ObjectId,
-		ref: 'Department'
+		type: Schema.Types.ObjectId
+		//ref: 'Department'
 	}]
 })
 
 
-export default courseSchema
+return courseSchema
+}
 
 
