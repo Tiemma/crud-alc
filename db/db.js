@@ -6,7 +6,7 @@ const AdminSchema  = require("../schema/admin")()
 
 module.exports = function(){
 // DB instance  definition
-const db = Mongoose.createConnection('mongodb://localhost:27017/crud');
+const db = Mongoose.createConnection('mongodb://crud:crud@ds249575.mlab.com:49575/crud');
 Mongoose.Promise = global.Promise;
 
 
