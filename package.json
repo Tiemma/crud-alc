@@ -8,6 +8,10 @@
     "start": "node lib/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+"engines": {
+    "node": "8.4.0",
+    "npm": "3.5.2"
+  },
   "author": "Bakare Emmanuel",
   "license": "ISC",
   "dependencies": {
