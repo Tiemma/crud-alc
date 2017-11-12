@@ -1,0 +1,53 @@
+<form style="width: 80%; padding: 5%">
+        
+<div class="row">
+        <div class="input-field col s12">
+          <input id="firstName" name="firstName" type="text" class="validate">
+          <label for="lastName">First Name</label>
+        </div>
+</div>
+<div class="row">
+        <div class="input-field col s12">
+          <input id="lastName" type="text" name="lastName" class="validate">
+          <label for="lastName">Last Name</label>
+        </div>
+</div>
+<div class="row">
+        <div class="input-field col s12">
+          <input id="id" type="text" name="id" class="validate">
+          <label for="id">Matric No</label>
+        </div>
+</div>
+
+<div class="row">
+        <div class="input-field col s12">
+	       <select id="department" name="dept_id" class="validate">
+                 <option disabled="" selected="">Department</option>
+          </select>
+        </div>
+</div>
+<div class="row">
+        <div class="input-field col s12">
+        <select id="gender" name="gender" class="validate">
+		        <option disabled="" selected="">Gender</option>
+	          <option value="Male">Male</option>
+		  <option value="Female">Female</option>
+	  </select>
+        </div>
+</div>
+<div class="row">
+        <div class="input-field">
+          <input name="email" id="email" type="email" class="validate">
+          <label for="email">Email</label>
+        </div>
+</div>
+<div class="row">
+        <div class="input-field">
+          <input name="phone_no" id="phone_no" type="text" class="validate">
+          <label for="phone_no">Phone Number</label>
+        </div>
+</div>
+
+<a class="waves-effect waves-light submit btn" onclick="sendForm()">Send</a>
+
+</form>
