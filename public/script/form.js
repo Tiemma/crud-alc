@@ -76,10 +76,14 @@ function createMutation(userId){
   `
       }
 
+
+   Materialize.toast('Created Successfully', 4000)
+
   return `
           mutation{
                   createStudent(${createMutation.slice(0, createMutation.length -1)}){id}
           }
+
   `
   }else if (tab == "department"){
 

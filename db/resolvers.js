@@ -106,6 +106,11 @@ module.exports = function(){
     courses: async(student) =>{
 
     }
+  },
+  Courses:{
+    department: async(departments) => {
+        var departments = new Departments
+    }
   }
   };
 
