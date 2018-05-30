@@ -8,7 +8,9 @@ This crud application that implements the following stack:
 
 ### Backend
 > MongoDB
+
 > Node
+
 > GraphQL
 
 I opted in for GraphQL as it had easier route configuration and better data consumption from API's due to its feature to send data from multiple collections without unncessary aggregations.
