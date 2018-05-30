@@ -1,37 +1,34 @@
-## Welcome to GitHub Pages
+# CRUD Application
 
-You can use the [editor on GitHub](https://github.com/Tiemma/crud-alc/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
+This was built as part of the challenge posed by the Andela Learning community to get certification as part of a Udacity course training on  Web Applications.
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+This web application is a SPA(Single Page Application) which fetches  and stores data from a remote mongoDB database.
 
-### Markdown
+This crud application that implements the following stack:
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+### Backend
+> MongoDB
+> Node
+> GraphQL
 
-```markdown
-Syntax highlighted code block
+I opted in for GraphQL as it had easier route configuration and better data consumption from API's due to its feature to send data from multiple collections without unncessary aggregations.
 
-# Header 1
-## Header 2
-### Header 3
 
-- Bulleted
-- List
+## Frontend
+> Materialize CSS
 
-1. Numbered
-2. List
+This was a simple demo so I just used a CSS framework to ease development.
 
-**Bold** and _Italic_ and `Code` text
 
-[Link](url) and ![Image](src)
-```
+## Running the application
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
+You can run the web application by first installing all the necessary dependencies
 
-### Jekyll Themes
+> npm install
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/Tiemma/crud-alc/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
+From there :
 
-### Support or Contact
+> npm start
 
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+The application sets up a graphql server by default and is available on port 3000
+
